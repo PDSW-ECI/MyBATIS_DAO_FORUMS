@@ -159,6 +159,6 @@ Implemente las operaciones:
 
 
 ## Parte IV
-10. Implemente una prueba para la consulta de Entadas de Foro, teniendo en cuenta la siguiente clase de equivalencia: Entradas de Foro que no tienen respuesta. En caso de que el DAO hecho con MyBATIS tenga problemas, cual es la causa del mismo?. En caso de requerir corregir la sentencia SQL tenga en cuenta el siguiente gráfico:
+10. Implemente una prueba para la consulta de Entadas de Foro, teniendo en cuenta la siguiente clase de equivalencia: Entradas de Foro que no tienen Comentarios. En caso de que el DAO hecho con MyBATIS tenga problemas, cual es la causa del mismo?. En caso de requerir corregir la sentencia SQL tenga en cuenta el siguiente gráfico:
 
 ![](http://4.bp.blogspot.com/-_HsHikmChBI/VmQGJjLKgyI/AAAAAAAAEPw/JaLnV0bsbEo/s1600/sql%2Bjoins%2Bguide%2Band%2Bsyntax.jpg)
