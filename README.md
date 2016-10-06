@@ -2,6 +2,8 @@
 ###Procesos de desarrollo de Software - PDSW
 ####Tecnologías de persistencia - Frameworks de Persistencia - Introducción a MyBatis
 
+## Partes II y III: Avance para el martes en clase.
+
 
 En este laboratorio, se realizará el mismo ejercicio desarrollado semanas atrás con JDBC 'plano', pero esta vez haciendo uso de un 'framework' de persistencia. La base de datos que se utilizará tiene los siguientes parámetros:
 
@@ -154,3 +156,9 @@ Implemente las operaciones:
 * save de MyBATISDaoUsuario
 * load de MyBATISDaoEntradaForo
 * addToForo de MyBATISDaoEntradaForo
+
+
+## Parte IV
+10. Implemente una prueba para la consulta de Entadas de Foro, teniendo en cuenta la siguiente clase de equivalencia: Entradas de Foro que no tienen respuesta. En caso de que el DAO hecho con MyBATIS tenga problemas, cual es la causa del mismo?. En caso de requerir corregir la sentencia SQL tenga en cuenta el siguiente gráfico:
+
+![](http://4.bp.blogspot.com/-_HsHikmChBI/VmQGJjLKgyI/AAAAAAAAEPw/JaLnV0bsbEo/s1600/sql%2Bjoins%2Bguide%2Band%2Bsyntax.jpg)
