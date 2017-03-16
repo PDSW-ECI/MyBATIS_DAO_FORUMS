@@ -1,6 +1,6 @@
-###Escuela Colombiana de Ingeniería
-###Procesos de desarrollo de Software - PDSW
-####Tecnologías de persistencia - Frameworks de Persistencia - Introducción a MyBatis
+### Escuela Colombiana de Ingeniería
+### Procesos de desarrollo de Software - PDSW
+#### Tecnologías de persistencia - Frameworks de Persistencia - Introducción a MyBatis
 
 ## Partes II y III: Avance para el martes en clase.
 
@@ -25,7 +25,7 @@ En este laboratorio, se realizará el mismo ejercicio desarrollado semanas atrá
         <typeAlias type='edu.eci.pdsw.samples.entities.Comentario' alias='Comentario'/>
         <typeAlias type='edu.eci.pdsw.samples.entities.Usuario' alias='Usuario'/>
     </typeAliases>             
-```
+	```
 
 2. Lo primero que va a hacer es configurar un 'mapper' que permita que el framework construya el grafo de objetos correspondiente a todas las entradas de foro disponibles. Para hacer más eficiente la reconstrucción, la misma se realizará a partir de una sola sentencia SQL que relaciona las entradas de foro, los comentarios, y sus respectivos autores. Ejecute esta sentencia en un cliente SQL (en las estaciones Linux está instalado EMMA), y revise qué nombre se le está asignando a cada columna del resultado:
 
@@ -83,7 +83,7 @@ INNER JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
 
 	```xml
 	<collection property='propiedad3' ofType='Detalle' resultMap='DetalleResult'></collection>
-```
+	```
 
 	Teniendo en cuenta lo anterior, haga los ajustes correspondientes en la configuración para el caso del modelo de Pacientes y Consultas.
 
@@ -92,13 +92,13 @@ INNER JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
 
 	```sql	
 	select ma.propiedad1, det.propiedad1 ....
-```	
+	```	
 
 	Se debería cambiar a:
 
 	```sql		
 	select ma.propiedad1, det.propiedad1 as detalle_propiedad1
-```
+	```
 
 	Y posteriormente, en la 'colección' o en la 'asociación' correspondiente en el 'resultMap', indicar que las propiedades asociadas a ésta serán aquellas que tengan un determinado prefijo:
 
@@ -110,7 +110,7 @@ INNER JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
         <result property='propiedad3' column='COLUMNA3'/>        
         <collection property='propiedad4' ofType='Detalle' columnPrefix='detalle_'></collection>
     </resultMap>
-```
+	```
 	Haga los ajustes necesarios en la consulta y en los 'resultMap' para que no haya inconsistencias de nombres (por ejemplo, el correo del autor de la entrada al foro y el del autor del comentario).
 
 
@@ -123,7 +123,7 @@ SqlSession sqlss = sessionfact.openSession();
 EntradaForoMapper pedmp=sqlss.getMapper(EntradaForoMapper.class);
 System.out.println(pedmp.getEntradasForo());
 ...
-```
+	```
 
 9. Con lo anterior, implemente la operación 'loadAll' de MyBATISDAOEntradaForo. Pruebe el funcionamiento de MyBATIS a través del DAO con el ejemplo implementado en DAOUseExample.
 
