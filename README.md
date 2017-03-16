@@ -30,11 +30,11 @@ En este laboratorio, se realizará el mismo ejercicio desarrollado semanas atrá
 2. Lo primero que va a hacer es configurar un 'mapper' que permita que el framework construya el grafo de objetos correspondiente a todas las entradas de foro disponibles. Para hacer más eficiente la reconstrucción, la misma se realizará a partir de una sola sentencia SQL que relaciona las entradas de foro, los comentarios, y sus respectivos autores. Ejecute esta sentencia en un cliente SQL (en las estaciones Linux está instalado EMMA), y revise qué nombre se le está asignando a cada columna del resultado:
 
 	```sql
-	select ef.id, ef.fecha_hora, ef.contenido, cm.id as id, cm.fecha_hora as fecha_hora, cm.contenido as contenido, autor.nombre as nombre, autor.email as email, autorcom.nombre as nombre,  autorcom.email as email
-from ENTRADAS_FOROS as ef 
-INNER JOIN COMENTARIOS as cm ON ef.`id` = cm.`ENTRADAS_FOROS_id` 
-INNER JOIN USUARIOS as autor ON autor.email=ef.USUARIOS_email
-INNER JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
+	select ef.id, ef.fecha_hora, ef.contenido, cm.id as id, cm.fecha_hora as fecha_hora, cm.contenido as contenido, 	autor.nombre as nombre, autor.email as email, autorcom.nombre as nombre,  autorcom.email as emai 
+	from ENTRADAS_FOROS as ef 
+	INNER JOIN COMENTARIOS as cm ON ef.`id` = cm.`ENTRADAS_FOROS_id` 
+	INNER JOIN USUARIOS as autor ON autor.email=ef.USUARIOS_email 
+	INNER JOIN USUARIOS as autorcom ON autorcom.email=cm.USUARIOS_email
 	```
 
 2. Abra el archivo XML en el cual se definirán los parámetros para que MyBatis genere el 'mapper' de EntradaForo (EntradaForoMapper.xml). Ahora, mapee un elemento de tipo \<select> al método 'getEntradaForos':
